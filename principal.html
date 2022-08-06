@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Encriptador</title>
+</head>
+<header>
+	<img id="logo" src="imagenes/Logo.png" alt="">
+</header>
+<body>
+	<div class="row">
+		<div class="column1">
+			<div class="input">
+				<textarea name="text" class="input" cols="30" rows="10" placeholder="Ingrese el texto aqui" required></textarea>
+			</div>
+			<div class="botones">
+				<svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM232 152C232 138.8 242.8 128 256 128s24 10.75 24 24v128c0 13.25-10.75 24-24 24S232 293.3 232 280V152zM256 400c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 385.9 273.4 400 256 400z"/></svg>
+				<label for="botones">Solo letras minúsculas y sin acentos</label>
+				<br>
+				<button class="encriptar" id="encriptar">Encriptar</button>
+				<button class="desencriptar" id="desencriptar">Desencriptar</button>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="mensaje">
+				<img id="munheco" src="imagenes/Muñeco.png" alt="">
+				<div id="alerta">
+					<h3>Ningun mensaje fue encontrado</h3>
+					<p>Ingresa el texto que desees encriptar o desencriptar.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+	var texto=document.querySelector('textarea');
+	var encriptar=document.querySelector(".encriptar");
+	var desencriptar=document.querySelector(".desencriptar");
+	texto.focus();
+
+	function encript(){
+		var palabras=texto.value;
+		var frase=palabras.toLowerCase();
+		var encriptada="";
+
+		for(var i=0;i<frase.length;i++){
+			if(frase[i]=="a"){
+				encriptada+="ai";
+			}else if(frase[i]=="e"){
+				encriptada+="enter";
+			}else if(frase[i]=="i"){
+				encriptada+="imes";
+			}else if(frase[i]=="o"){
+				encriptada+="ober";
+			}else if(frase[i]=="u"){
+				encriptada+="ufat";
+			}else{
+				encriptada+=frase[i];
+			}
+		}
+	console.log(encriptada);
+	texto.value="";
+	}
+	function desencript(){
+		var palabras=texto.value;
+		var frase=palabras.toLowerCase();
+		var desencriptada="";
+		for(var i=0;i<frase.length;i++){
+			if(frase.search("ai")){
+				desencriptada+=frase.replace("ai","a");
+				if(frase.search("enter")){
+					desencriptada+=frase.replace("enter","e");
+				}
+			}
+			var i=frase.replace("imes","i");
+			var o=frase.replace("ober","o");
+			var u=frase.replace("ufat","u");
+		}
+
+		console.log(desencriptada);
+	}
+	texto.value="";
+
+	encriptar.addEventListener("click",encript);
+	
+	desencriptar.addEventListener("click",desencript);
+</script>
+
+<style>
+	#logo{
+		height: 35px;
+	}
+	body {
+		top: 25%;
+		background-color: #EFF1FA;
+	}
+
+	.input{
+		padding-top: 2%;
+		padding-left: 5%;
+		background-color: #EFF1FA;
+		border:0;
+		outline: none;
+		font-family: sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 32px;
+		min-height: auto;
+		color: #0A3871;
+		resize: none;
+	}
+	.botones{
+		padding-top: 8%;
+		
+	}
+	#encriptar {
+		margin-left: 2%;
+		width: 328px;
+		height: 67px;
+		border-radius: 24px;
+		background-color: #0A3871;
+		border-color: #0A3871;
+		font-size: 16px;
+		color: white;
+	}
+
+	#desencriptar {
+		margin-left: 2%;
+		width: 328px;
+		height: 67px;
+		border-radius: 24px;
+		background-color: #D8DFE8;
+		font-size: 16px;
+		color: darkblue;
+		border-color: darkblue;
+	}
+	label{
+		font-size: 12px;
+		color: #495057;
+		
+	}
+	#icon{
+		margin-left: 3%;
+		margin-top: 2%;
+		width: 16px;
+		height: 16px;
+	}
+	#mensaje{
+		margin-left: 5%;
+		margin-top: 2%;
+		font-size: 32px;
+		color: #0A3871;
+		position: absolute;
+	}
+	.mensaje {
+		width: 375px; 
+		height: 570px; 
+		border-radius: 32px;
+		background: white;
+
+	}
+	.column1 {
+		float: left;
+		width: 65%;
+	}
+	.column2 {
+		float: left;
+		width: 35%;
+	}
+
+	#munheco{
+		width: 336px;
+		height: 304px;
+		padding-top:70px;
+		padding-left:22px
+	}
+	h3,p{
+		font-family: sans-serif;
+		text-align: center;
+	}
+	h3{
+		padding-left: 15%;
+		width: 70%;
+		font-size: 20px;
+	}
+	p{
+		font-size: 16px;
+	}
+</style>
