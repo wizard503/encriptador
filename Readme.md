@@ -5,7 +5,7 @@ Esta aplicacion tiene la capacidad de encriptar y desencriptar mensajes, basados
 ## Construido con 🛠️
 
 * [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) - Lenguaje de programacion ligero, interpretado 
-* [HTML]([https://maven.apache.org/](https://developer.mozilla.org/es/docs/Web/HTML)) - Define la estructura del contenido web
+* [HTML](https://developer.mozilla.org/es/docs/Web/HTML) - Define la estructura del contenido web
 * [CSS](https://developer.mozilla.org/es/docs/Web/CSS) - Lenguaje de estilos que describe la presentacion
 
 ## Versionado 📌
