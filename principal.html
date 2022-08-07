@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Encriptador</title>
 </head>
 <header>
 	<img id="logo" src="imagenes/Logo.png" alt="">
 </header>
 <body>
-	<div class="row">
+	<div class="container">
 		<div class="column1">
 			<div class="input">
-				<textarea name="text" class="input" cols="30" rows="10" placeholder="Ingrese el texto aqui" required></textarea>
+				<textarea name="text" class="input" cols="30" rows="11" placeholder="Ingrese el texto aqui" required></textarea>
 			</div>
 			<div class="botones">
-				<svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM232 152C232 138.8 242.8 128 256 128s24 10.75 24 24v128c0 13.25-10.75 24-24 24S232 293.3 232 280V152zM256 400c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 385.9 273.4 400 256 400z"/></svg>
-				<label for="botones">Solo letras minúsculas y sin acentos</label>
+				<i id="icon" class="fa fa-exclamation-circle"></i>
+				<label class="aviso" for="botones">Solo letras minúsculas y sin acentos</label>
 				<br>
 				<button class="encriptar" id="encriptar">Encriptar</button>
 				<button class="desencriptar" id="desencriptar">Desencriptar</button>
@@ -26,82 +26,125 @@
 		</div>
 		<div class="column2">
 			<div class="mensaje">
-				<img id="munheco" src="imagenes/Muñeco.png" alt="">
-				<div id="alerta">
-					<h3>Ningun mensaje fue encontrado</h3>
-					<p>Ingresa el texto que desees encriptar o desencriptar.</p>
+				<div class="msj">
+					<img id="munheco" src="imagenes/Muñeco.png" alt="">
+					<div id="alerta">
+						<h3>Ningun mensaje fue encontrado</h3>
+						<p id="texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+					</div>
+				</div>
+				<div class="pantalla">
+					<textarea class="output" cols="21" rows="13" readonly="readonly"></textarea co>
+					<button class="copiar" id="copiar">Copiar</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+<footer>
+	<p id="autor"> © 2022 Made with Jose Duran<a href="https://www.linkedin.com/in/jose-duran-dev/"><i id="in" class="fa fa-linkedin"></i></a></p>
+</footer>
 </html>
 
 <script>
 	var texto=document.querySelector('textarea');
 	var encriptar=document.querySelector(".encriptar");
 	var desencriptar=document.querySelector(".desencriptar");
+	var copiar=document.querySelector(".copiar");
+	var output=document.querySelector(".output");
+	var pantalla=document.querySelector(".pantalla").style.display="none";
+	
+	texto.value='';
 	texto.focus();
 
 	function encript(){
 		var palabras=texto.value;
 		var frase=palabras.toLowerCase();
 		var encriptada="";
-
-		for(var i=0;i<frase.length;i++){
-			if(frase[i]=="a"){
-				encriptada+="ai";
-			}else if(frase[i]=="e"){
-				encriptada+="enter";
-			}else if(frase[i]=="i"){
-				encriptada+="imes";
-			}else if(frase[i]=="o"){
-				encriptada+="ober";
-			}else if(frase[i]=="u"){
-				encriptada+="ufat";
-			}else{
-				encriptada+=frase[i];
+		if(palabras!=""){
+			for(var i=0;i<frase.length;i++){
+				if(frase[i]=="a"){
+					encriptada+="ai";
+				}else if(frase[i]=="e"){
+					encriptada+="enter";
+				}else if(frase[i]=="i"){
+					encriptada+="imes";
+				}else if(frase[i]=="o"){
+					encriptada+="ober";
+				}else if(frase[i]=="u"){
+					encriptada+="ufat";
+				}else{
+					encriptada+=frase[i];
+				}
 			}
+			var cuadro=document.querySelector(".msj").style.display="none";
+			pantalla=document.querySelector(".pantalla").style.display='';
+
+			output.value=encriptada
+		}else{
+			
 		}
-	console.log(encriptada);
-	texto.value="";
+		texto.value="";
 	}
 	function desencript(){
 		var palabras=texto.value;
 		var frase=palabras.toLowerCase();
-		var desencriptada="";
-		for(var i=0;i<frase.length;i++){
-			if(frase.search("ai")){
-				desencriptada+=frase.replace("ai","a");
-				if(frase.search("enter")){
-					desencriptada+=frase.replace("enter","e");
-				}
+		if(palabras!=""){
+			var mapLetters = {
+				"ai": "a",
+				"enter": "e",
+				"imes": "i",
+				"ober": "o",
+				"ufat": "u"
 			}
-			var i=frase.replace("imes","i");
-			var o=frase.replace("ober","o");
-			var u=frase.replace("ufat","u");
+			var desencriptada=frase.replace(/ai|enter|imes|ober|ufat/gi, function(matched){
+				return mapLetters[matched];
+			});
+		}else{
+			output.value="";		
 		}
-
-		console.log(desencriptada);
+		output.value=desencriptada;
+		texto.value="";
 	}
-	texto.value="";
+
+	function copi(){
+		output.select();
+		document.execCommand('copy');
+		output.unselect()
+	}
 
 	encriptar.addEventListener("click",encript);
 	
 	desencriptar.addEventListener("click",desencript);
+
+	copiar.addEventListener("click",copi);
+
 </script>
 
 <style>
 	#logo{
 		height: 35px;
 	}
-	body {
-		top: 25%;
-		background-color: #EFF1FA;
+	header{
+		padding: 1px;
 	}
-
+	body {
+		background-color: #EFF1FA;
+		position: relative;
+		min-height: 100vh;
+		padding-bottom: 1%;
+	}
+	footer{
+		position: fixed;
+		left: -0.5%;
+		bottom: 0;
+		width: 100%;
+		font-size: medium;
+		background-color: black;
+		color: white;	
+	}	
 	.input{
-		padding-top: 2%;
+		padding-top: 1%;
 		padding-left: 5%;
 		background-color: #EFF1FA;
 		border:0;
@@ -115,7 +158,8 @@
 		resize: none;
 	}
 	.botones{
-		padding-top: 8%;
+		position: relative;
+		padding-top: 3%;
 		
 	}
 	#encriptar {
@@ -127,8 +171,8 @@
 		border-color: #0A3871;
 		font-size: 16px;
 		color: white;
+		cursor: pointer;
 	}
-
 	#desencriptar {
 		margin-left: 2%;
 		width: 328px;
@@ -138,48 +182,59 @@
 		font-size: 16px;
 		color: darkblue;
 		border-color: darkblue;
+		cursor: pointer;
 	}
-	label{
+	#copiar {
+		position: absolute;
+		bottom: 12%;
+		right: 8%;
+		width: 328px;
+		height: 67px;
+		border-radius: 24px;
+		background-color: #D8DFE8;
+		font-size: 16px;
+		color: darkblue;
+		border-color: darkblue;
+		cursor: pointer;
+	}
+	.aviso{
 		font-size: 12px;
 		color: #495057;
 		
 	}
 	#icon{
 		margin-left: 3%;
-		margin-top: 2%;
 		width: 16px;
 		height: 16px;
 	}
-	#mensaje{
-		margin-left: 5%;
-		margin-top: 2%;
-		font-size: 32px;
-		color: #0A3871;
-		position: absolute;
+	#in{
+		width: 16px;
+		height: 16px;
+		font-size: medium;
+		color:white;
+		padding-left: 75%;
 	}
 	.mensaje {
 		width: 375px; 
 		height: 570px; 
 		border-radius: 32px;
 		background: white;
-
 	}
 	.column1 {
 		float: left;
 		width: 65%;
 	}
 	.column2 {
-		float: left;
+		float: right;
 		width: 35%;
 	}
-
-	#munheco{
+	.mensaje{
 		width: 336px;
-		height: 304px;
+		height: 510px;
 		padding-top:70px;
 		padding-left:22px
 	}
-	h3,p{
+	h3,#texto{
 		font-family: sans-serif;
 		text-align: center;
 	}
@@ -188,7 +243,23 @@
 		width: 70%;
 		font-size: 20px;
 	}
-	p{
+	#texto{
 		font-size: 16px;
 	}
+	.output{
+		margin-left: 0%;
+		margin-top: 2%;
+		font-size: 24px;
+		color:#495057;
+		resize: none;
+		outline: none;
+		border: 0;
+		
+	}
+	#autor{
+		text-align: center;
+		font-family: sans-serif;
+		padding-left: 0%;
+	}
+	
 </style>
