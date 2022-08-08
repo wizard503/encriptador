@@ -27,7 +27,7 @@
 		<div class="column2">
 			<div class="mensaje">
 				<div class="msj">
-					<img id="munheco" src="imagenes/Muñeco.png" alt="">
+					<img id="munheco" src="imagenes/codificar.jpg" >
 					<div id="alerta">
 						<h3>Ningun mensaje fue encontrado</h3>
 						<p id="texto">Ingresa el texto que desees encriptar o desencriptar.</p>
@@ -110,7 +110,6 @@
 	function copi(){
 		output.select();
 		document.execCommand('copy');
-		output.unselect()
 	}
 
 	encriptar.addEventListener("click",encript);
@@ -122,6 +121,38 @@
 </script>
 
 <style>
+
+#encriptar {
+	background-image: linear-gradient(to right, #33001b 0%, #61045F  51%, #ff0084  100%);
+	border-color: #710a60;
+	color: white;
+}
+#encriptar:active {
+	background-image: linear-gradient(to right, #33001b 0%, #61045F  51%, #ff0084  100%);
+	opacity: 75%;	
+}
+
+#desencriptar {
+	background-image: linear-gradient(to right, #460027c7 0%, #61045F  51%, #ff0084  100%);
+	border-color: #710a60;
+	color: white;
+	opacity: 85%;
+}
+#desencriptar:active {
+	background-image: linear-gradient(to right, #460027c7 0%, #61045F  51%, #ff0084  100%);
+	opacity: 100%;	
+}
+
+#copiar {
+	background-image: linear-gradient(to right, #460027c7 0%, #61045F  51%, #ff0084  100%);
+	border-color: #710a60;
+	color: white;
+	opacity: 80%;
+}
+#copiar:active {
+	background-image: linear-gradient(to right, #460027c7 0%, #61045F  51%, #ff0084  100%);
+	opacity: 95%;	
+}
 
 @media only screen and (max-width: 1900px){
 	#logo{
@@ -156,7 +187,7 @@
 		font-weight: 400;
 		font-size: 32px;
 		min-height: auto;
-		color: #0A3871;
+		color: #5c0a71;
 		resize: none;
 	}
 	.botones{
@@ -169,10 +200,7 @@
 		width: 328px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #0A3871;
-		border-color: #0A3871;
 		font-size: 16px;
-		color: white;
 		cursor: pointer;
 	}
 	#desencriptar {
@@ -180,23 +208,17 @@
 		width: 328px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	#copiar {
 		position: absolute;
 		bottom: 12%;
-		right: 8%;
+		right: 7%;
 		width: 328px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	.aviso{
@@ -218,7 +240,7 @@
 	}
 	.mensaje {
 		width: 375px; 
-		height: 570px; 
+		height: 485px; 
 		border-radius: 32px;
 		background: white;
 	}
@@ -231,8 +253,6 @@
 		width: 35%;
 	}
 	.mensaje{
-		width: 336px;
-		height: 510px;
 		padding-top:70px;
 		padding-left:22px
 	}
@@ -256,12 +276,15 @@
 		resize: none;
 		outline: none;
 		border: 0;
-		
 	}
 	#autor{
 		text-align: center;
 		font-family: sans-serif;
 		padding-left: 0%;
+	}
+	#munheco{
+		padding-top: 10%;
+		width: 325px;
 	}
 }
 @media only screen and (max-width: 1000px) {
@@ -301,7 +324,7 @@
 		font-weight: 400;
 		font-size: 32px;
 		min-height: auto;
-		color: #0A3871;
+		color: #5c0a71;
 		resize: none;
 		width: 80%;
 	}
@@ -315,10 +338,7 @@
 		width: 250px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #0A3871;
-		border-color: #0A3871;
 		font-size: 16px;
-		color: white;
 		cursor: pointer;
 	}
 	#desencriptar {
@@ -326,10 +346,7 @@
 		width: 250px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	#copiar {
@@ -338,16 +355,12 @@
 		width: 328px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	.aviso{
 		font-size: 12px;
 		color: #495057;
-		
 	}
 	#icon{
 		margin-left: 3%;
@@ -448,7 +461,7 @@
 		font-style: normal;
 		font-size: 22px;
 		min-height: auto;
-		color: #0A3871;
+		color: #5c0a71;
 		resize: none;
 		width: 80%;
 	}
@@ -462,10 +475,7 @@
 		width: 343px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #0A3871;
-		border-color: #0A3871;
 		font-size: 16px;
-		color: white;
 		cursor: pointer;
 	}
 	#desencriptar {
@@ -474,10 +484,7 @@
 		width: 343px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	#copiar {
@@ -486,10 +493,7 @@
 		width: 328px;
 		height: 67px;
 		border-radius: 24px;
-		background-color: #D8DFE8;
 		font-size: 16px;
-		color: darkblue;
-		border-color: darkblue;
 		cursor: pointer;
 	}
 	.aviso{
