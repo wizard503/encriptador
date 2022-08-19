@@ -21,8 +21,8 @@
 				<i id="icon" class="fa fa-exclamation-circle"></i>
 				<label class="aviso" for="botones">Solo letras minúsculas y sin acentos</label>
 				<br>
-				<button class="encriptar" id="encriptar">Encriptar</button>
-				<button class="desencriptar" id="desencriptar">Desencriptar</button>
+				<button class="encriptar" id="encriptar" onclick="btnEncriptar()">Encriptar</button>
+				<button class="desencriptar" id="desencriptar" onclick="desencript()">Desencriptar</button>
 			</div>
 		</div>
 		<div class="column2">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="pantalla">
 					<textarea class="output" cols="21" rows="13" readonly="readonly"></textarea>
-					<button class="copiar" id="copiar">Copiar</button>
+					<button class="copiar" id="copiar" onclick="copi()">Copiar</button>
 				</div>
 			</div>
 		</div>
@@ -46,77 +46,4 @@
 	<p id="autor"> © 2022 Powered by Jose Duran<a href="https://www.linkedin.com/in/jose-duran-dev/"><i id="in" class="fa fa-linkedin"></i></a></p>
 </footer>
 </html>
-
-<script>
-	var texto=document.querySelector('textarea');
-	var encriptar=document.querySelector(".encriptar");
-	var desencriptar=document.querySelector(".desencriptar");
-	var copiar=document.querySelector(".copiar");
-	var output=document.querySelector(".output");
-	var pantalla=document.querySelector(".pantalla").style.display="none";
-	
-	texto.value='';
-	texto.focus();
-
-	function encript(){
-		var palabras=texto.value;
-		var frase=palabras.toLowerCase();
-		var encriptada="";
-		if(palabras!=""){
-			for(var i=0;i<frase.length;i++){
-				if(frase[i]=="a"){
-					encriptada+="ai";
-				}else if(frase[i]=="e"){
-					encriptada+="enter";
-				}else if(frase[i]=="i"){
-					encriptada+="imes";
-				}else if(frase[i]=="o"){
-					encriptada+="ober";
-				}else if(frase[i]=="u"){
-					encriptada+="ufat";
-				}else{
-					encriptada+=frase[i];
-				}
-			}
-			var cuadro=document.querySelector(".msj").style.display="none";
-			pantalla=document.querySelector(".pantalla").style.display='';
-
-			output.value=encriptada
-		}else{
-			
-		}
-		texto.value="";
-	}
-	function desencript(){
-		var palabras=texto.value;
-		var frase=palabras.toLowerCase();
-		if(palabras!=""){
-			var mapLetters = {
-				"ai": "a",
-				"enter": "e",
-				"imes": "i",
-				"ober": "o",
-				"ufat": "u"
-			}
-			var desencriptada=frase.replace(/ai|enter|imes|ober|ufat/gi, function(matched){
-				return mapLetters[matched];
-			});
-		}else{
-			output.value="";		
-		}
-		output.value=desencriptada;
-		texto.value="";
-	}
-
-	function copi(){
-		output.select();
-		document.execCommand('copy');
-	}
-
-	encriptar.addEventListener("click",encript);
-	
-	desencriptar.addEventListener("click",desencript);
-
-	copiar.addEventListener("click",copi);
-
-</script>
+<script src="script.js"></script>
