@@ -30,231 +30,181 @@
 	opacity: 95%;	
 }
 
-@media only screen and (max-width: 1900px){
-	#logo{
-		height: 35px;
-	}
-	header{
-		padding: 1px;
-	}
-	body {
-		background-color: #e3d3f4;
-		position: relative;
-		min-height: 100vh;
-		padding-bottom: 1%;
-	}
-	footer{
-		position: fixed;
-		left: -0.5%;
-		bottom: 0;
-		width: 100%;
-		font-size: medium;
-		background-color: black;
-		color: white;	
-	}	
-	.input{
-		padding-top: 1%;
-		padding-left: 5%;
-		background-color: #e3d3f4;
-		border:0;
-		outline: none;
-		font-family: sans-serif;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 32px;
-		min-height: auto;
-		color: #5c0a71;
-		resize: none;
-	}
-	.botones{
-		position: relative;
-		padding-top: 3%;
-		
-	}
-	#encriptar {
-		margin-left: 2%;
-		width: 328px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
-	}
-	#desencriptar {
-		margin-left: 2%;
-		width: 328px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
-	}
-	#copiar {
-		position: absolute;
-		bottom: 12%;
-		right: 7%;
-		width: 328px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
-	}
-	.aviso{
-		font-size: 12px;
-		color: #495057;
-		
-	}
-	#icon{
-		margin-left: 3%;
-		width: 16px;
-		height: 16px;
-	}
-	#in{
-		width: 16px;
-		height: 16px;
-		font-size: medium;
-		color:white;
-		padding-left: 75%;
-	}
-	.mensaje {
-		width: 375px; 
-		height: 485px; 
-		border-radius: 32px;
-		background: white;
-	}
-	.column1 {
-		float: left;
-		width: 65%;
-	}
-	.column2 {
-		float: right;
-		width: 35%;
-	}
-	.mensaje{
-		padding-top:70px;
-		padding-left:22px
-	}
-	h3,#texto{
-		font-family: sans-serif;
-		text-align: center;
-	}
-	h3{
-		padding-left: 15%;
-		width: 70%;
-		font-size: 20px;
-	}
-	#texto{
-		font-size: 16px;
-	}
-	.output{
-		margin-left: 0%;
-		margin-top: 2%;
-		font-size: 24px;
-		color:#495057;
-		resize: none;
-		outline: none;
-		border: 0;
-	}
-	#autor{
-		text-align: center;
-		font-family: sans-serif;
-		padding-left: 0%;
-	}
-	#munheco{
-		padding-top: 10%;
-		width: 325px;
-	}
+#logo{
+	height: 35px;
+}
+
+header{
+	padding: 1px;
+}
+
+body {
+	background-color: #e3d3f4;
+}
+
+main {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+}
+footer {
+    position: fixed;
+	margin: 5px  0px 0;
+	left: 0%;
+    background: #192323;
+    width: 100%;
+    height: 40px;
+    bottom: 0%;
+	padding-top: 8px;
+	text-align: center;
+	
+}
+
+footer p {
+    display: inline;
+    font-family: 'PT Sans', sans-serif;
+    font-size: medium;
+	color: #fff;
+}
+
+.input{
+	padding-top: 1%;
+	padding-left: 5%;
+	background-color: #e3d3f4;
+	border:0;
+	outline: none;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	min-height: auto;
+	color: #5c0a71;
+	resize: none;
+	height: 24.5rem;
+}
+
+.botones{
+	position: relative;
+	padding-top: 3%;
+	
+}
+#encriptar {
+	margin-left: 2%;
+	width: 328px;
+	height: 67px;
+	border-radius: 24px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#desencriptar {
+	margin-left: 2%;
+	width: 328px;
+	height: 67px;
+	border-radius: 24px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#copiar {
+	position: absolute;
+	bottom: 12%;
+	right: 8%;
+	width: 328px;
+	height: 67px;
+	border-radius: 24px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.aviso{
+	font-size: 12px;
+	color: #495057;
+	
+}
+
+#icon{
+	margin-left: 3%;
+	width: 16px;
+	height: 16px;
+}
+
+#in{
+	width: 25px;
+	font-size: larger;
+	color:white;
+}
+
+
+.mensaje {
+	width: 375px; 
+	height: 450px; 
+	border-radius: 32px;
+	background: white;
+}
+
+.column1 {
+	float: left;
+	width: 65%;
+}
+
+.column2 {
+	float: right;
+	width: 35%;
+}
+
+.mensaje{
+	padding-top:70px;
+	padding-left:22px
+}
+
+h3,#texto{
+	font-family: sans-serif;
+	text-align: center;
+}
+
+h3{
+	padding-left: 15%;
+	width: 70%;
+	font-size: 20px;
+}
+
+#texto{
+	font-size: 16px;
+}
+
+.output{
+	margin-left: 0%;
+	margin-top: 2%;
+	font-size: 24px;
+	color:#495057;
+	resize: none;
+	outline: none;
+	border: 0;
+}
+#munheco{
+	padding-top: 10%;
+	width: 325px;
 }
 @media only screen and (max-width: 1000px) {
 	.container{
 		margin-left: 15%;
 		margin-right: auto;
-	}
-	#logo{
-		height: 35px;
-	}
-	header{
-		padding: 1px;
-	}
-	body {
-		background-color: #e3d3f4;
-		position: relative;
-		min-height: 100vh;
-		padding-bottom: 1%;
-	}
-	footer{
-		position: fixed;
-		left: -0.5%;
-		bottom: 0;
-		width: 100%;
-		font-size: medium;
-		background-color: black;
-		color: white;	
 	}	
 	.input{
-		padding-top: 1%;
-		padding-left: 5%;
-		background-color: #e3d3f4;
-		border:0;
-		outline: none;
-		font-family: sans-serif;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 32px;
-		min-height: auto;
-		color: #5c0a71;
-		resize: none;
 		width: 80%;
 	}
-	.botones{
-		position: relative;
-		padding-top: 3%;
-		
-	}
-	#encriptar {
-		margin-left: 2%;
+	#encriptar ,#desencriptar{
 		width: 250px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
-	}
-	#desencriptar {
-		margin-left: 2%;
-		width: 250px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
 	}
 	#copiar {
 		bottom: 13%;
 		left: 13%;
-		width: 328px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
 	}
-	.aviso{
-		font-size: 12px;
-		color: #495057;
-	}
-	#icon{
-		margin-left: 3%;
-		width: 16px;
-		height: 16px;
-	}
-	#in{
-		width: 16px;
-		height: 16px;
-		font-size: medium;
-		color:white;
-		padding-left: 50%;
-	}
+	
 	.mensaje {
 		width: 365px; 
 		height: 60px; 
-		border-radius: 32px;
-		background:white;
 	}
 	.column1 {
 		float: none;
@@ -272,120 +222,48 @@
 		padding-top:5px;
 		padding-left:2px;
 	}
-	h3,#texto{
-		font-family: sans-serif;
-		text-align: center;
-	}
-	h3{
-		padding-left: 15%;
-		width: 70%;
-		font-size: 20px;
-	}
-	#texto{
-		font-size: 16px;
-	}
 	.output{
 		border-radius: 12px;
 		padding-left: 8%;
 		margin-top: 3%;
-		font-size: 24px;
-		color:#495057;
-		resize: none;
-		outline: none;
-		border: 0;
 		width: 465px;
 		height: 160px;
-	}
-	#autor{
-		text-align: center;
-		font-family: sans-serif;
-		left: 0%;
 	}
 	#munheco{
 		display: none;
 	}
 }
 @media only screen and (max-width: 500px) {
-	#logo{
-		height: 35px;
+
+	footer p:nth-child(2){
+		display: none;
 	}
-	header{
-		padding: 1px;
-	}
-	body {
-		background-color: #e3d3f4;
-		position: relative;
-		min-height: 100vh;
-		padding-bottom: 1%;
-	}
-	footer{
-		position: fixed;
-		left: -0.5%;
-		bottom: 0;
-		width: 100%;
-		font-size: medium;
-		background-color: black;
-		color: white;	
-	}	
 	.input{
-		padding-top: 1%;
-		padding-left: 3%;
-		background-color: #e3d3f4;
-		border:0;
-		outline: none;
-		font-family: sans-serif;
-		font-style: normal;
 		font-size: 22px;
-		min-height: auto;
-		color: #5c0a71;
-		resize: none;
-		width: 80%;
+		width: 90%;
 	}
 	.botones{
-		position: relative;
-		padding-top: 3%;
 		padding-left: 0;
 	}
 	#encriptar {
 		margin-left: 1%;
 		width: 343px;
 		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
 	}
 	#desencriptar {
 		margin-top: 4%;
 		margin-left:1%;
 		width: 343px;
 		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
 	}
 	#copiar {
 		bottom: 8%;
 		left: 3%;
-		width: 328px;
-		height: 67px;
-		border-radius: 24px;
-		font-size: 16px;
-		cursor: pointer;
-	}
-	.aviso{
-		font-size: 12px;
-		color: #495057;
-	}
-	#icon{
-		margin-left: 3%;
-		width: 16px;
-		height: 16px;
 	}
 	#in{
 		width: 16px;
 		height: 16px;
 		font-size: medium;
-		color:white;
 		padding-left: 5%;
 	}
 	.mensaje {
@@ -404,40 +282,21 @@
 		padding-left: 2%;
 		padding-bottom: 15%;
 	}
+
 	.mensaje{
 		width: 335px;
 		height: 250px;
 		padding-top:5px;
 		padding-left:2px;
 	}
-	h3,#texto{
-		font-family: sans-serif;
-		text-align: center;
-	}
-	h3{
-		padding-left: 15%;
-		width: 70%;
-		font-size: 20px;
-	}
-	#texto{
-		font-size: 16px;
-	}
+
 	.output{
 		border-radius: 12px;
 		padding-left: 6%;
 		font-size: 24px;
 		margin-top: 3%;
-		color:#495057;
-		resize: none;
-		outline: none;
-		border: 0;
 		width: 310px;
 		height: 160px;
-	}
-	#autor{
-		text-align: center;
-		font-family: sans-serif;
-		left: 0%;
 	}
 	#munheco{
 		display: none;

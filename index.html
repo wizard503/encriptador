@@ -7,43 +7,54 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Encriptador</title>
+
+	<!-- Librería de alertas-->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header>
 	<img id="logo" src="imagenes/Logo.png" alt="">
 </header>
 <body>
-	<div class="container">
-		<div class="column1">
-			<div class="input">
-				<textarea name="text" class="input" cols="30" rows="11" placeholder="Ingrese el texto aqui" required></textarea>
+	<main>
+		<div class="container">
+			<div class="column1">
+				<div class="input">
+					<textarea name="text" class="input" cols="30" rows="8.5" placeholder="Ingrese el texto aqui" required></textarea>
+				</div>
+				<div class="botones">
+					<i id="icon" class="fa fa-exclamation-circle"></i>
+					<label class="aviso" for="botones">Solo letras minúsculas y sin acentos</label>
+					<br>
+					<button class="encriptar" id="encriptar" onclick="btnEncriptar()">Encriptar</button>
+					<button class="desencriptar" id="desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+				</div>
 			</div>
-			<div class="botones">
-				<i id="icon" class="fa fa-exclamation-circle"></i>
-				<label class="aviso" for="botones">Solo letras minúsculas y sin acentos</label>
-				<br>
-				<button class="encriptar" id="encriptar" onclick="btnEncriptar()">Encriptar</button>
-				<button class="desencriptar" id="desencriptar" onclick="desencript()">Desencriptar</button>
-			</div>
-		</div>
-		<div class="column2">
-			<div class="mensaje">
-				<div class="msj">
-					<img id="munheco" src="imagenes/codificar.jpg" >
-					<div id="alerta">
-						<h3>Ningun mensaje fue encontrado</h3>
-						<p id="texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+			<div class="column2">
+				<div class="mensaje">
+					<div class="msj">
+						<img id="munheco" src="imagenes/codificar.jpg" >
+						<div id="alerta">
+							<h3>Ningun mensaje fue encontrado</h3>
+							<p id="texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+						</div>
+					</div>
+					<div class="pantalla">
+						<textarea class="output" cols="21" rows="10" readonly="readonly"></textarea>
+						<button class="copiar" id="copiar" onclick="copi()">Copiar</button>
 					</div>
 				</div>
-				<div class="pantalla">
-					<textarea class="output" cols="21" rows="13" readonly="readonly"></textarea>
-					<button class="copiar" id="copiar" onclick="copi()">Copiar</button>
-				</div>
 			</div>
 		</div>
-	</div>
+	</main>
+	<footer>
+        <p>&copy; 2022 </p>
+		<p>All Rights Reserved</p>
+		<p>|</p>
+        <p>Made by</p>
+        <p>Jose Duran |</p>
+		<a href="https://www.linkedin.com/in/jose-duran-dev/"><i id="in" class="fa fa-linkedin"></i></a>
+		<a href="https://github.com/wizard503"><i id="in" class="fa fa-github"></i></a>
+    </footer>
 </body>
-<footer>
-	<p id="autor"> © 2022 Powered by Jose Duran<a href="https://www.linkedin.com/in/jose-duran-dev/"><i id="in" class="fa fa-linkedin"></i></a></p>
-</footer>
 </html>
 <script src="script.js"></script>
