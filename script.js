@@ -33,7 +33,7 @@ function btnEncriptar() {
 	}
 }
 function btnDesencriptar() {
-	var palabras = desencript(texto.value);º
+	var palabras = desencript(texto.value);
 	output.value = palabras;
 
 	if (palabras != "") {
