@@ -194,18 +194,16 @@ h3{
 	.input{
 		width: 80%;
 	}
+	
+	#copiar {
+		bottom: -59%;
+		left: 25%;
+	}
+
 	#encriptar ,#desencriptar{
 		width: 250px;
 	}
-	#copiar {
-		bottom: 13%;
-		left: 13%;
-	}
 	
-	.mensaje {
-		width: 365px; 
-		height: 60px; 
-	}
 	.column1 {
 		float: none;
 		width: 100%;
@@ -233,7 +231,7 @@ h3{
 		display: none;
 	}
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 
 	footer p:nth-child(2){
 		display: none;
@@ -257,8 +255,8 @@ h3{
 		height: 67px;
 	}
 	#copiar {
-		bottom: 8%;
-		left: 3%;
+		bottom: -73%;
+		left: 5%;
 	}
 	#in{
 		width: 16px;
